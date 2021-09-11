@@ -3,36 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/main.css">
   
   <title>Todo app</title>
 
 </head>
 <body>
-<header class="header">
-  <div>
-    <h1>TODO</h1>
+<header>
+  <div class="header">
+    <h1 class="logo">T O D O</h1>
     <img src="/images/icon-moon.svg" alt="moon icon">
   </div>
-  <input type="text" id="input" name="input">
+  <form class="text-input">
+    <input type="submit" value="" class="icon" disabled>
+    <input type="text" id="input" name="input" placeholder="Create a new todo...">
+  </form>
 </header>
 <main class="main-section">
-  <ul class="list">
-    <li class="list-item">Todo...</li>
-    <li class="list-item">
+  <ul class="todo-list">
+    <li class="todo-item">
+      <button class="icon icon-check"></button>
+      <p class="todo-text">Complete Todo App</p>
+      <button class="icon icon-close">
+        <img src="/images/icon-cross.svg" alt="cross icon">
+      </button>
+    </li>        
+    <li class="todo-item">
+      <button class="icon icon-check"></button>
+      <p class="todo-text">Complete Todo App</p>
+      <button class="icon icon-close">
+        <img src="/images/icon-cross.svg" alt="cross icon">
+      </button>
+    </li>
+    <li>
       <nav class="nav-bar">
-        <p class="nav-text"></p>
+        <p class="nav-text">5 items left</p>
         <ul class="nav-menu">
-          <li class="nav-item">All</li>
-          <li class="nav-item">Active</li>
-          <li class="nav-item">Completed</li>
+          <li class="nav-item"><button class="nav-btn">All</button></li>
+          <li class="nav-item"><button class="nav-btn">Active</button></li>
+          <li class="nav-item"><button class="nav-btn">Completed</button></li>
         </ul>
         <button class="nav-btn">Clear Completed</button>
-      </nav>      
-    </li>
+      </nav>
+    </li>     
   </ul>
-</main>
+</main> 
 <footer>
   <p>Drag and drop to reorder the list</p>
 </footer>
