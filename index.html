@@ -9,47 +9,35 @@
 
 </head>
 <body>
-<header>
+<header id="header">
   <div class="header">
     <h1 class="logo">T O D O</h1>
-    <img src="/images/icon-moon.svg" alt="moon icon">
+    <button id="theme-toggler">
+      <img src="/images/icon-moon.svg" alt="moon icon" id="theme-img">
+    </button>
+
   </div>
-  <form class="text-input">
-    <input type="submit" value="" class="icon" disabled>
-    <input type="text" id="input" name="input" placeholder="Create a new todo...">
+  <form class="input-form">
+    <div class="icon"></div>
+    <input type="text" id="input-field" name="input" placeholder="Create a new todo...">
   </form>
 </header>
 <main class="main-section">
-  <ul class="todo-list">
-    <li class="todo-item">
-      <button class="icon icon-check"></button>
-      <p class="todo-text">Complete Todo App</p>
-      <button class="icon icon-close">
-        <img src="/images/icon-cross.svg" alt="cross icon">
-      </button>
-    </li>        
-    <li class="todo-item">
-      <button class="icon icon-check"></button>
-      <p class="todo-text">Complete Todo App</p>
-      <button class="icon icon-close">
-        <img src="/images/icon-cross.svg" alt="cross icon">
-      </button>
-    </li>
-    <li>
-      <nav class="nav-bar">
-        <p class="nav-text">5 items left</p>
-        <ul class="nav-menu">
-          <li class="nav-item"><button class="nav-btn">All</button></li>
-          <li class="nav-item"><button class="nav-btn">Active</button></li>
-          <li class="nav-item"><button class="nav-btn">Completed</button></li>
-        </ul>
-        <button class="nav-btn">Clear Completed</button>
-      </nav>
-    </li>     
-  </ul>
+  <ul class="todo-list"></ul>
+  <nav class="nav-bar">
+    <p class="nav-text" id="item-count">5 items left</p>
+    <ul class="nav-menu">
+      <li class="nav-item"><button class="nav-btn all">All</button></li>
+      <li class="nav-item"><button class="nav-btn active">Active</button></li>
+      <li class="nav-item"><button class="nav-btn completed">Completed</button></li>
+    </ul>
+    <button class="nav-btn" id="clear-completed">Clear Completed</button>
+  </nav>
+  <footer class="footer">
+    <!-- <p>Drag and drop to reorder the list</p> -->
+    <!-- COMING SOON -->
+  </footer>
 </main> 
-<footer>
-  <p>Drag and drop to reorder the list</p>
-</footer>
+<script src="script.js"></script>
 </body>
 </html>
