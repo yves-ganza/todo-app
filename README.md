@@ -69,6 +69,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Yves Ganza](https://www.yvesganza.me)
+- Website - [Yves Ganza](http://www.yvesganza.me)
 - Frontend Mentor - [@yves-ganza](https://www.frontendmentor.io/profile/yves-ganza)
 - Twitter - [@lebon-yg](https://www.twitter.com/lebon_yg)
