@@ -145,6 +145,10 @@ function createTodoNode(todo){
     if(todo.status === 'completed'){
         btnNodeCheck.classList.add('gradiented')
         checkDivNode.className = 'disable-bg-hover'
+        checkImgNode.style.display = 'initial'
+    }
+    else{
+        checkImgNode.style.display = 'none'
     }
     btnNodeCheck.addEventListener('click', markCompleted)
 
