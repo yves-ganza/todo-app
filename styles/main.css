@@ -117,8 +117,8 @@ header button {
 .input-form #input-field{
     background: inherit;
     width: 100%;
-    padding: 1rem;
-    font-size: 21px;
+    padding: 1rem 0;
+    font-size: 1rem;
     border-bottom-right-radius: 6px;
     border-top-right-radius: 6px;
     border: none;
@@ -153,7 +153,7 @@ header button {
     min-height: 3rem;
     max-height: 100%;
     overflow-y: auto;
-    margin-top: -6vh;
+    margin-top: -40px;
     border-radius: 6px 6px 0 0;
     filter: drop-shadow(-4px 0 4px rgba(0, 0, 0, 0.25)) drop-shadow(4px 0 4px rgba(0, 0, 0, 0.25));
 }
@@ -205,7 +205,7 @@ header button {
     pointer-events: none;
 }
 
-.main-section .todo-list .todo-item:hover .icon-close {
+.todo-item:hover .icon-close {
     display: unset;
 }
 
@@ -289,9 +289,7 @@ header button {
     justify-content: center;
 }
 
-.nav-bar .nav-btn:hover {
-    color:#494C6B;
-}
+
 
 .activated {
     color: #3A7CFD;
@@ -309,14 +307,13 @@ footer {
 
 @media screen and (max-width: 375px) {
     .nav-bar {
+        padding: 0;
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: 1fr 1fr;
-        row-gap: 1.5vh;
     }
 
     .nav-bar .nav-text {
-        justify-content: flex-start;
         grid-column: 1 / 4;
         grid-row: 1 / 2;
     }
@@ -325,11 +322,12 @@ footer {
         grid-column: 1 / -1;
         grid-row: 2 / 3;
         justify-content: space-around;
+        border-top: 1px solid #979797;
+        padding: 1rem;
     }
 
     .nav-bar .nav-btn {
         grid-column: 4 / -1;
         grid-row: 1 / 2;
-        justify-content: flex-end;
     }
 }
