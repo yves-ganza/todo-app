@@ -26,44 +26,11 @@ function toggleTheme(event) {
 document.querySelector('#theme-toggler').addEventListener('click', toggleTheme)
 
 function populateUI(todos = state.todos){
-
-    //Check theme
-    if(state.theme === 'light'){
-        document.querySelector("#theme-img").setAttribute('src', '/images/icon-moon.svg')
-        document.querySelector("#header").style.background = 'url("/images/bg-desktop-light.jpg")'
-        document.body.style.background = 'var(--light-background-color)'
-        document.querySelector(".main-section").style.background = 'var(--light-background-color)'
-        document.querySelector(".todo-list").style.background = 'var(--light-theme-container-color)'
-        document.querySelector(".todo-text").style.color = '#494C6B'
-        document.querySelector(".input-form").style.background = 'var(--light-theme-container-color)'
-        document.querySelector("#input-field").style.background = 'var(--light-theme-container-color)'
-        document.querySelector("#input-field").style.color = '#393A4B'
-        document.querySelector(".nav-bar").style.background = 'var(--light-background-color)'
-        document.querySelector(".nav-text").style.background = 'var(--light-theme-container-color)'
-        document.querySelector(".nav-menu").style.background = 'var(--light-theme-container-color)'
-        document.querySelector("#clear-completed").style.background = 'var(--light-theme-container-color)'
-        document.querySelector(".footer").style.background = 'var(--light-background-color)'
-    }
-    else{
-        document.querySelector("#theme-img").setAttribute('src', '/images/icon-sun.svg')
-        document.querySelector("#header").style.background = 'url("/images/bg-desktop-dark.jpg")'
-        document.body.style.background = 'var(--dark-background-color)'
-        document.querySelector(".main-section").style.background = 'var(--dark-background-color)'
-        document.querySelector(".todo-list").style.background = 'var(--dark-theme-container-color)'
-        document.querySelector(".todo-text").style.color = '#C8CBE7'
-        document.querySelector(".input-form").style.background = 'var(--dark-theme-container-color)'
-        document.querySelector("#input-field").style.background = 'var(--dark-theme-container-color)'
-        document.querySelector("#input-field").style.color = '#ffffff'
-        document.querySelector(".nav-bar").style.background = 'var(--dark-background-color)'
-        document.querySelector(".nav-text").style.background = 'var(--dark-theme-container-color)'
-        document.querySelector(".nav-menu").style.background = 'var(--dark-theme-container-color)'
-        document.querySelector("#clear-completed").style.background = 'var(--dark-theme-container-color)'
-        document.querySelector(".footer").style.background = 'var(--dark-background-color)'
-    }
+    const todoItems = Array(...document.querySelectorAll(".todo-item"))
 
     //Clear and repopulate the list 
-    if(document.querySelectorAll(".todo-item").length > 0){
-        document.querySelectorAll(".todo-item") && document.querySelectorAll(".todo-item").forEach(elem=>{
+    if(todoItems.length > 0){
+        todoItems.forEach(elem=>{
             todoListElem.removeChild(elem)
         })
     }
@@ -73,6 +40,60 @@ function populateUI(todos = state.todos){
     });
 
     document.querySelector("#item-count").textContent = `${todos.length} items left`
+
+    console.log(todoItems)
+    //Check theme
+    if(state.theme === 'light'){
+        document.querySelector("#theme-img").setAttribute('src', '/images/icon-moon.svg')
+
+        document.querySelector("#header").style.background = 'url("/images/bg-desktop-light.jpg")'
+
+        document.body.style.background = 'var(--light-background-color)'
+
+        document.querySelector(".main-section").style.background = 'var(--light-theme-background-color)'
+
+        document.querySelector(".input-form").style.background = 'var(--light-theme-container-color)'
+
+        document.querySelector("#input-field").style.color = '#393A4B'
+
+        document.querySelector(".todo-list").style.background = 'var(--light-theme-container-color)'
+
+        document.querySelectorAll(".todo-text").forEach(el=>el.style.color = 'var(--light-theme-text-color)')
+
+        document.querySelector(".nav-bar").style.background = 'var(--light-theme-container-color)'
+
+        document.querySelector(".footer").style.background = 'var(--light-theme-background-color)'
+
+        document.querySelector("#clear-completed").style.background = 'var(--light-theme-container-color)'
+
+        
+    }
+    else{
+        document.querySelector("#theme-img").setAttribute('src', '/images/icon-sun.svg')
+
+        document.querySelector("#header").style.background = 'url("/images/bg-desktop-dark.jpg")'
+
+        document.body.style.background = 'var(--dark-background-color)'
+
+        document.querySelector(".main-section").style.background = 'var(--dark-theme-background-color)'
+
+        document.querySelector(".todo-list").style.background = 'var(--dark-theme-container-color)'
+
+        document.querySelector(".nav-bar").style.background = 'var(--dark-theme-container-color)'
+
+        document.querySelector(".footer").style.background = 'var(--dark-theme-background-color)'
+
+        document.querySelectorAll(".todo-text").forEach(el=>el.style.color = 'var(--dark-theme-text-color)')
+
+        document.querySelector(".input-form").style.background = 'var(--dark-theme-container-color)'
+
+        document.querySelector("#input-field").style.color = '#ffffff'
+
+        document.querySelector("#clear-completed").style.background = 'var(--dark-theme-container-color)'
+
+   
+    }
+
 }
 
 function filterTodos(filter){
@@ -129,7 +150,7 @@ function createTodoNode(todo){
     
     //Create a list item to hold the todo
     const liNode = document.createElement('li')
-    liNode.className = 'todo-item list-item'
+    liNode.className = 'todo-item'
     liNode.id = todo.id
 
     //Create the check button to mark a todo complete
@@ -183,7 +204,9 @@ function createTodoNode(todo){
 //Filter what the user sees depending on the filter selected
 function filterUI(event){
     const filter = event.target.classList[1].toString()
-    document.querySelectorAll(".nav-btn").forEach(btn=>{
+    console.log(event.target)
+    
+    filterButtons.forEach(btn=>{
         btn.classList.contains('activated') && btn.classList.remove('activated')
         btn.classList.contains(filter) && btn.classList.add('activated')
     })
