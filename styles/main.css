@@ -43,7 +43,6 @@ body {
     justify-content: center;
     flex-direction: column;
     overflow: hidden;
-    overflow-y: scroll;
 }
 
 
