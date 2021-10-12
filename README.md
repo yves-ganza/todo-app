@@ -42,7 +42,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: https://elegant-noyce-66bfbe.netlify.app/
+- Live Site URL: https://elegant-todo-app.netlify.app/
 
 
 ### Built with
