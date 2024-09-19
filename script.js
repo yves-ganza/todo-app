@@ -48,9 +48,9 @@ function populateUI(todos = state.todos){
 
         document.querySelector("#header").style.background = 'url("/images/bg-desktop-light.jpg")'
 
-        document.body.style.background = 'var(--light-background-color)'
+        document.body.style.background = 'var(--light-theme-background-color)'
 
-        document.querySelector(".main-section").style.background = 'var(--light-theme-background-color)'
+        // document.querySelector(".main-section").style.background = 'var(--light-theme-background-color)'
 
         document.querySelector(".input-form").style.background = 'var(--light-theme-container-color)'
 
@@ -73,9 +73,9 @@ function populateUI(todos = state.todos){
 
         document.querySelector("#header").style.background = 'url("/images/bg-desktop-dark.jpg")'
 
-        document.body.style.background = 'var(--dark-background-color)'
+        document.body.style.background = 'var(--dark-theme-background-color)'
 
-        document.querySelector(".main-section").style.background = 'var(--dark-theme-background-color)'
+        // document.querySelector(".main-section").style.background = 'var(--dark-theme-background-color)'
 
         document.querySelector(".todo-list").style.background = 'var(--dark-theme-container-color)'
 
